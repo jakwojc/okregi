@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <math.h>
+float potega(int a,int b);
+int main(){
+float c,a,b,x,X,y,Y,r,R,d,xy[2];
+printf("Podaj wspolrzedne x,y i promien pierwszego okregu\n");
+scanf("%f %f %f",&x,&y,&r);
+printf("Podaj wspolrzedne x,y i promien drugiego okregu\n");
+scanf("%f %f %f",&X,&Y,&R);
+//printf("%d",potega(2,0));
+
+
+
+xy[0]=(2*Y-2*y)/(2*x-2*X);
+xy[1]=(r*r-R*R-x*x+X*X-y*y+Y*Y)/(2*x-2*X);
+//
+// obliczanie y
+a=xy[0]+1;
+b=(2*xy[0]*(xy[1]+a)+2*b);
+c=b*b+potega(xy[1]+a,2)-r*r;
+float delta,x1,x2;
+delta=b*b-4*a*c;
+if(d==0){
+x1=-b/(2*a);
+printf("Jest jedno rozwiazanie x=%.2f\n",x1);
+}
+if(d<0) {
+printf("To rownanie nie ma rozwiazan rzeczywistych\n");
+}
+if(d>0) {
+x1=(-b-sqrt(d))/(2*a);
+x2=(-b+sqrt(d))/(2*a);
+printf("To rownanie ma dwa rozwiazania x=%.2f albo x=%.2f\n",x1,x2);
+}
+//
+//
+return 0;
+}
+
+
+
+
+int potega(int a,int b){
+int c;
+if (b=0) return 1;
+else{
+
+for (c=2;c<=b;c++) {
+a=a*a;
+}
+return a;
+
+}
+}
